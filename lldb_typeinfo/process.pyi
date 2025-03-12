@@ -1,4 +1,4 @@
-from lldb_typeinfo.lldb_typeinfo.error import SBError
+from lldb_typeinfo.error import SBError
 
 class SBProcess(object):
     def Destroy(self) -> SBError:
