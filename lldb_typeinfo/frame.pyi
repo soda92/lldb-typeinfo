@@ -1,4 +1,4 @@
-from lldb_typeinfo.thread import SBThread
+from .thread import SBThread
 
 class SBFrame(object):
     """represents one of the stack frames associated with a thread.

@@ -1,4 +1,4 @@
-from lldb_typeinfo.process import SBProcess
+from .process import SBProcess
 
 class SBThread(object):
     """

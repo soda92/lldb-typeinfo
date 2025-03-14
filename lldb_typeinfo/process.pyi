@@ -1,4 +1,4 @@
-from lldb_typeinfo.error import SBError
+from .error import SBError
 
 class SBProcess(object):
     """A Progress indicator helper class.
