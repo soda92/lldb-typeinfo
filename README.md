@@ -2,14 +2,26 @@
 
 Type information for use with lldb scripting
 
-
 ## usage
 
+in the script header, insert the following snippet:
 
+```py
+try:
+    from lldb_typeinfo import SBFrame
+except ImportError as _e:
+    exec("""
+class SBFrame:
+    pass
+        """)
+    pass
+```
 
-## detail
+replace `SBFrame` with the desired class.
 
-Original:
+## implementation details
+
+this project change the original swig-generated binding:
 
 ```python
 def GetChildAtIndex(self, *args):
@@ -18,7 +30,7 @@ def GetChildAtIndex(self, *args):
     GetChildAtIndex(SBValue self, uint32_t idx, lldb::DynamicValueType use_dynamic, bool can_create_synthetic) -> SBValue
 ```
 
-fixed:
+with more detailed binding:
 
 ```python
 def GetChildAtIndex(self, idx: int) -> SBValue: ...
