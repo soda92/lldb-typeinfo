@@ -1,5 +1,8 @@
 from lldb_typeinfo.thread import SBThread
 
 class SBFrame(object):
-    def GetThread(self) -> SBThread:
-        r"""GetThread(SBFrame self) -> SBThread"""
+    """represents one of the stack frames associated with a thread.
+    SBThread contains SBFrame(s).
+    """
+
+    def GetThread(self) -> SBThread: ...
